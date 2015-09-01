@@ -11,7 +11,8 @@ module.exports = function (grunt) {
 
         var sourceControlIndex = 'sc',
             sourceControlType = 'changelogs',
-            changelogFolder = 'sc-changelogs',
+            routeFolder = 'es-source-control',
+            changelogFolder = 'changelogs',
             options = this.options() || {},
             from = grunt.option('from') || options.from || null,
             done = this.async(),
@@ -24,7 +25,7 @@ module.exports = function (grunt) {
             grunt.log.writeln('Starting update process');
 
             try{
-                var masterChangeLog = grunt.file.readJSON('sc-master.json');
+                var masterChangeLog = grunt.file.readJSON(routeFolder + '/sc-master.json');
                 var changelogsToExecute = masterChangeLog.changelogs;
 
                 grunt.log.writeln('\n' + changelogsToExecute.length + ' changelog/s found\n');
@@ -57,7 +58,7 @@ module.exports = function (grunt) {
                     if(result.hits.total == 0){
                         grunt.log.writeln('\nId: ' + changelog.id + ' - Processing...');
 
-                        var changeJson = grunt.file.readJSON(changelogFolder + '/' + changelog.folder + '/' + changelog.file + '.json');
+                        var changeJson = grunt.file.readJSON(routeFolder + '/' + changelogFolder + '/' + changelog.folder + '/' + changelog.file + '.json');
 
                         try{
                             _(changeJson.changes).forEach(function(change, index){

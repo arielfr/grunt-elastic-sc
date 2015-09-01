@@ -21,6 +21,6 @@ module.exports = function (grunt) {
 
     grunt.loadTasks('tasks');
 
-    //No esta funcionando
+    //Not working yet
     grunt.registerTask('sc-update', ['sc-create', 'sc-process']);
 };
