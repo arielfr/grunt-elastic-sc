@@ -7,7 +7,7 @@
 			"type": "mapping"
 		},
 		{
-			"id": "testing",
+			"id": "add-data",
 			"folder": "testing",
 			"file": "data",
 			"type": "data"

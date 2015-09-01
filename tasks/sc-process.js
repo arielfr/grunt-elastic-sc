@@ -13,6 +13,7 @@ module.exports = function (grunt) {
             sourceControlType = 'changelogs',
             changelogFolder = 'sc-changelogs',
             options = this.options() || {},
+            from = grunt.option('from') || options.from || null,
             done = this.async(),
             es = new elasticsearch.Client({ host: options.host });
 
@@ -24,10 +25,17 @@ module.exports = function (grunt) {
 
             try{
                 var masterChangeLog = grunt.file.readJSON('sc-master.json');
+                var changelogsToExecute = masterChangeLog.changelogs;
 
-                grunt.log.writeln('\n' + masterChangeLog.changelogs.length + ' changelog/s found\n');
+                grunt.log.writeln('\n' + changelogsToExecute.length + ' changelog/s found\n');
 
-                _(masterChangeLog.changelogs).forEach(function(changelog){
+                if( changelogsToExecute.length > 0 && from ){
+                    grunt.log.writeln('Executing from ' + from + '\n');
+
+                    changelogsToExecute = _.drop(changelogsToExecute, _.findIndex(changelogsToExecute, 'id', from) + 1);
+                }
+
+                _(changelogsToExecute).forEach(function(changelog){
                     var q = {
                         "index": 'sc',
                         "type": 'changelogs',
@@ -43,6 +51,7 @@ module.exports = function (grunt) {
                     };
 
                     var result = es.search(q);
+                    var result = {hits: {total: 1}};
 
                     //Execute the changelog
                     if(result.hits.total == 0){
@@ -65,12 +74,14 @@ module.exports = function (grunt) {
                                         es.index(q);
                                     }).value();
                                 }else if(changelog.type == 'mapping'){
-                                    es.indices.putMapping({
+                                    var q = {
                                         "index": change.index,
                                         "type": change.type,
                                         "ignoreConflicts": true,
                                         "body": change.body
-                                    });
+                                    }
+
+                                    es.indices.putMapping(q);
                                 }else if(changelog.type == 'delete'){
                                     _(change.records).forEach(function(record){
                                         var q = {
