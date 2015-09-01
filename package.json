@@ -2,16 +2,16 @@
     "name": "grunt-elastic-sc",
     "description": "Grunt ElasticSearch Source Control",
     "version": "0.0.1",
-    "homepage": "https://github.com/dvloop/grunt-elasticsearch",
+    "homepage": "https://github.com/arielfr/grunt-elastic-sc",
     "author": {
         "name": "Ariel Rey"
     },
     "repository": {
         "type": "ssh",
-        "url": "ssh://git@github.com:dvloop/grunt-elasticsearch.git"
+        "url": "ssh://git@github.com:arielfr/grunt-elastic-sc.git"
     },
     "bugs": {
-        "url": "https://github.com/dvloop/grunt-elasticsearch/issues"
+        "url": "https://github.com/arielfr/grunt-elastic-sc/issues"
     },
     "license": "MIT",
     "main": "Gruntfile.js",
