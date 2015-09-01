@@ -1,0 +1,17 @@
+{
+	"changes": [
+		{
+			"index": "sc",
+			"type": "test_mapping",
+			"records": [
+				{
+					"query": {
+						"term": {
+							"id": 3
+						}
+					}
+				}
+			]
+		}
+	]
+}

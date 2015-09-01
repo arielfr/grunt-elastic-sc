@@ -1,0 +1,21 @@
+{
+	"changes": [
+		{
+			"index": "sc",
+			"type": "test_mapping",
+			"body": {
+				"test_mapping": {
+					"_all": { "enabled": false },
+					"dynamic": false,
+					"_id": {
+						"path": "id"
+				    },
+				    "properties": {
+				    	"id": { "type": "integer" },
+				    	"text": { "type": "string", "index": "not_analyzed" }
+				    }
+				}
+			}
+		}
+	]
+}

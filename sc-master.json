@@ -1,0 +1,22 @@
+{
+	"changelogs": [
+		{
+			"id": "create-testing",
+			"folder": "testing",
+			"file": "mapping",
+			"type": "mapping"
+		},
+		{
+			"id": "testing",
+			"folder": "testing",
+			"file": "data",
+			"type": "data"
+		},
+		{
+			"id": "deleting-data",
+			"folder": "testing",
+			"file": "delete",
+			"type": "delete"
+		}
+	]
+}
