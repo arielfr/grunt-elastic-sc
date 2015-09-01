@@ -186,6 +186,10 @@ To make a delete by query, the JSON file should be like this:
 - The Index and Type would be the ones to perform the delete.
 - The records are going to contain the query tag to execute. In this case, we are going to delete all the elements that have the id = 3
 
+## Example
+
+On the package folder, you will find a basic example already created
+
 ## Collaboration
 
 This is a base for creating a better Souce Control for ElasticSearch, all Forks and PR would be accepted. Thanks!

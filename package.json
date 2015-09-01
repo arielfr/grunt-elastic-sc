@@ -21,5 +21,12 @@
         "synchronize": "0.9.14",
         "lodash": "3.10.1"
     },
-    "readmeFilename": "README.md"
+    "readmeFilename": "README.md",
+    "keywords": [
+        "easticsearch",
+        "source",
+        "control",
+        "mapping",
+        "grunt"
+    ]
 }
