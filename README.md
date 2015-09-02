@@ -25,9 +25,11 @@ You have two main tasks
 
 You must create this directory structure on your project.
 
+```
 -> es-source-control
 	-> changelogs
 	-> sc-master.json
+```
 
 ## sc-master.json - Master Changelog File
 
