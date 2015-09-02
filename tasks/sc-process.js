@@ -52,7 +52,6 @@ module.exports = function (grunt) {
                     };
 
                     var result = es.search(q);
-                    var result = {hits: {total: 1}};
 
                     //Execute the changelog
                     if(result.hits.total == 0){
