@@ -1,7 +1,7 @@
 {
     "name": "grunt-elastic-sc",
     "description": "Grunt ElasticSearch Source Control",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "homepage": "https://github.com/arielfr/grunt-elastic-sc",
     "author": {
         "name": "Ariel Rey"
