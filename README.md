@@ -61,9 +61,9 @@ This will be the master changelog file. This file is going to have the changelog
 		}
 	]
 }
+```
 
 The **id** must be unique.
-```
 
 All the changelogs are going to be find on the folder "changelogs" on your "es-source-control" root directory.
 
@@ -91,7 +91,7 @@ Parameters:
 
 Example:
 ```
-grunt sc-process --from:add-data
+grunt sc-process --from=add-data
 ```
 
 Follow this example, this command will only execute "deleting-data".
